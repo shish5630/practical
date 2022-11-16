@@ -48,6 +48,8 @@ int main()
 
 
 //python 
+
+
 # Structure for an item which stores weight and
 # corresponding value of Item
 class Item:
@@ -84,7 +86,6 @@ def fractionalKnapsack(W, arr):
 
 
 # Driver Code
-
 if __name__ == "__main__":
 
 	W = 50
