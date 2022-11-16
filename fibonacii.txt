@@ -140,3 +140,78 @@ print(e(x, n))
 # This contributed by ihritik
 
 
+e^x c+++;
+//interative
+
+
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int factorial(int n ){
+    if( n==0 || n==1)
+        return 1;
+    else 
+        return n*factorial(n-1);
+}
+
+int main()
+{
+    int x , n ;
+    cout <<"Enter value of x : ";
+    cin >> x ;
+    cout <<"Enter number of terms : ";
+    cin >> n ;
+    
+    double sum = 1.0 , power , fact;
+    for (int a = 1; a < n; a++) {
+        power = pow(x,a);
+        sum += (power / factorial(a));
+    }
+    cout << "Sum : " << sum;
+    return 0;
+}
+
+
+//c+++ recursive
+
+// C++ implementation of the approach
+#include <iostream>
+using namespace std;
+
+// Recursive Function with static
+// variables p and f
+double e(int x, int n)
+{
+	static double p = 1, f = 1;
+	double r;
+
+	// Termination condition
+	if (n == 0)
+		return 1;
+
+	// Recursive call
+	r = e(x, n - 1);
+
+	// Update the power of x
+	p = p * x;
+
+	// Factorial
+	f = f * n;
+
+	return (r + p / f);
+}
+
+// Driver code
+int main()
+{
+	int x = 4, n = 15;
+	cout<<"\n"<< e(x, n);
+
+	return 0;
+}
+
+// this code is contributed by shivanisinghss2110
+
+
+
